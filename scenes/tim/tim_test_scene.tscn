@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cg4e7qtylvssi"]
+
+[ext_resource type="Script" uid="uid://b4832au4ehuot" path="res://scripts/tim/TimTestScript.cs" id="1_m10iy"]
+
+[node name="TimTestScene" type="Node2D" unique_id=1642360528]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=880332853]
+script = ExtResource("1_m10iy")
