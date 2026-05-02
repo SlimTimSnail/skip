@@ -15,6 +15,9 @@ public partial class SquareChar : CharacterBody2D
 	private float _ropeSpeed = 3f;
 
 	[Export]
+	private float _fastRopeSpeed = 6f;
+
+	[Export]
 	private Node2D _ropeFront = null;
 
 	[Export]
@@ -59,7 +62,9 @@ public partial class SquareChar : CharacterBody2D
 
 		MoveAndSlide();
 
-		_rotationDegrees += 1;
+		float clampedDegrees = _rotationDegrees % 360;
+		bool inFastZone = clampedDegrees >= 100f && clampedDegrees <= 240f;
+		_rotationDegrees += inFastZone ? _fastRopeSpeed : _ropeSpeed;
 
 		_ropeFront.RotationDegrees = _rotationDegrees;
 		_ropeBack.RotationDegrees = _rotationDegrees;

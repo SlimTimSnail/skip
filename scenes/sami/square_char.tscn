@@ -16,6 +16,7 @@ size = Vector2(64, 64)
 
 [node name="Square" type="CharacterBody2D" unique_id=1084824665 node_paths=PackedStringArray("_ropeFront", "_ropeBack")]
 script = ExtResource("1_o1cqj")
+_fastRopeSpeed = 8.0
 _ropeFront = NodePath("RopeFront")
 _ropeBack = NodePath("RopeBack")
 
