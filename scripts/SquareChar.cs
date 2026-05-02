@@ -1,7 +1,4 @@
 using Godot;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 
 public partial class SquareChar : CharacterBody2D
 {
@@ -13,6 +10,14 @@ public partial class SquareChar : CharacterBody2D
 
 	[Export]
 	private float _gravity = 1000f;
+
+	[Export]
+	private Node2D _ropeFront = null;
+
+	[Export]
+	private Node2D _ropeBack = null;
+
+	private float _rotationDegrees = 0;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -46,5 +51,10 @@ public partial class SquareChar : CharacterBody2D
 		Velocity = vel;
 
 		MoveAndSlide();
+
+		_rotationDegrees += 1;
+
+		_ropeFront.RotationDegrees = _rotationDegrees;
+		_ropeBack.RotationDegrees = _rotationDegrees;
 	}
 }
