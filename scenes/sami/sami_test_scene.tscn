@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0ewthgna2jip"]
 
 [ext_resource type="PackedScene" uid="uid://bimusy4pv0mba" path="res://scenes/sami/square_char.tscn" id="1_bl6cx"]
+[ext_resource type="Script" uid="uid://c0w1dwy1htnmg" path="res://scripts/GameScreen.cs" id="1_n1bf0"]
 
 [sub_resource type="Gradient" id="Gradient_34su8"]
 colors = PackedColorArray(0.078431375, 0.078431375, 0.078431375, 1, 0.078431375, 0.078431375, 0.078431375, 1)
@@ -14,6 +15,7 @@ height = 100
 size = Vector2(100, 100)
 
 [node name="SamiTestScene" type="Node2D" unique_id=1119504895]
+script = ExtResource("1_n1bf0")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1179893898]
 position = Vector2(960, 1100)
@@ -28,3 +30,5 @@ shape = SubResource("RectangleShape2D_n1bf0")
 [node name="Square" parent="." unique_id=1084824665 instance=ExtResource("1_bl6cx")]
 position = Vector2(960, 896.02)
 _gravity = 2000.0
+
+[connection signal="PlayerLose" from="Square" to="." method="GoToEnd"]

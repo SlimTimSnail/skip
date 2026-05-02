@@ -2,6 +2,9 @@ using Godot;
 
 public partial class SquareChar : CharacterBody2D
 {
+	[Signal]
+	public delegate void PlayerLoseEventHandler();
+
 	[Export]
 	private float _speed = 500f;
 
@@ -25,8 +28,15 @@ public partial class SquareChar : CharacterBody2D
 
 	private float _rotationDegrees = 0;
 
+	private bool _hasLost = false;
+
 	public override void _PhysicsProcess(double delta)
 	{
+		if (_hasLost)
+		{
+			return;
+		}
+
 		Vector2 vel = Velocity;
 
 		if (!IsOnFloor())
@@ -62,8 +72,18 @@ public partial class SquareChar : CharacterBody2D
 
 		MoveAndSlide();
 
-		float clampedDegrees = _rotationDegrees % 360;
+		float clampedDegrees = _rotationDegrees % 360f;
+		bool inLoseZone = clampedDegrees >= 120f && clampedDegrees <= 240f;
+
+		if (inLoseZone && IsOnFloor())
+		{
+			EmitSignal(SignalName.PlayerLose);
+			_hasLost = true;
+			return;
+		}
+
 		bool inFastZone = clampedDegrees >= 100f && clampedDegrees <= 240f;
+
 		_rotationDegrees += inFastZone ? _fastRopeSpeed : _ropeSpeed;
 
 		_ropeFront.RotationDegrees = _rotationDegrees;
