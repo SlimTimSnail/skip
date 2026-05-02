@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="skip"
-config/features=PackedStringArray("4.7", "Forward Plus")
+run/main_scene="uid://fn6nsidvqycx"
+config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+FlowManagerScene="*uid://bxoii248s2xl"
 
 [display]
 
