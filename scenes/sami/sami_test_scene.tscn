@@ -33,7 +33,6 @@ position = Vector2(960, 896.02)
 _gravity = 2000.0
 
 [node name="PlayerCamera" parent="." unique_id=1381443440 node_paths=PackedStringArray("_playerNode") instance=ExtResource("3_i381x")]
-position = Vector2(956, 700)
 _playerNode = NodePath("../Square")
 
 [connection signal="PlayerLose" from="Square" to="." method="GoToEnd"]

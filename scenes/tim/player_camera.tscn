@@ -4,7 +4,9 @@
 
 [node name="PlayerCamera" type="Camera2D" unique_id=1381443440]
 process_callback = 0
+limit_enabled = false
 position_smoothing_enabled = true
+position_smoothing_speed = 2.5
 editor_draw_limits = true
 script = ExtResource("1_r8e5q")
 metadata/_custom_type_script = "uid://butr4m2jde8if"
