@@ -18,3 +18,7 @@ mono_crash.*.json
 
 # VS ignores
 .vs
+
+# Releases and working files
+build
+working
