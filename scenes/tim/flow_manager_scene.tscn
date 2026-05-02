@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4188cnd4i4e8" path="res://scripts/tim/FlowManager.cs" id="1_gwol5"]
 [ext_resource type="PackedScene" uid="uid://rpxnxgqm8i11" path="res://scenes/tim/main_menu.tscn" id="2_xncug"]
-[ext_resource type="PackedScene" uid="uid://cg4e7qtylvssi" path="res://scenes/tim/tim_test_scene.tscn" id="3_cxxkg"]
+[ext_resource type="PackedScene" uid="uid://0ewthgna2jip" path="res://scenes/sami/sami_test_scene.tscn" id="3_cxxkg"]
 
 [node name="FlowManager" type="Node" unique_id=1455653147]
 script = ExtResource("1_gwol5")
