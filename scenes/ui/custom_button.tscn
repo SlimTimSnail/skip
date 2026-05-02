@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://3yc7nbxhi5h1"]
 
-[node name="CustomButton" type="Button" unique_id=460092577]
+[ext_resource type="Script" uid="uid://ipss4i8k4325" path="res://scripts/tim/CustomButton.cs" id="1_nr4dm"]
+[ext_resource type="AudioStream" uid="uid://boewgd7883bfi" path="res://audio/UI_ClickSound.tres" id="2_njdmp"]
+[ext_resource type="AudioStream" uid="uid://om0soj0onq61" path="res://audio/UI_HoverSound.tres" id="3_l1cl8"]
+
+[node name="CustomButton" type="Button" unique_id=460092577 node_paths=PackedStringArray("_clickSound", "_hoverSound")]
 custom_minimum_size = Vector2(300, 100)
 custom_maximum_size = Vector2(300, 100)
 anchors_preset = 8
@@ -16,3 +20,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Button Text"
+script = ExtResource("1_nr4dm")
+_clickSound = NodePath("ClickSound")
+_hoverSound = NodePath("HoverSound")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=285407638]
+stream = ExtResource("2_njdmp")
+volume_db = -5.0
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=1281162810]
+stream = ExtResource("3_l1cl8")
+volume_db = -11.0
