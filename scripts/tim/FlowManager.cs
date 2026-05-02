@@ -4,15 +4,26 @@ using System;
 [GlobalClass]
 public partial class FlowManager : Node
 {
+    public enum GameState
+    {
+        MainMenu,
+        Game,
+        End,
+    }
+
+    public static FlowManager Instance { get; private set; }
+
+    // Export variables
     [Export]
     private PackedScene _mainMenuScene;
     [Export]
     private PackedScene _gameScene;
+    [Export]
+    private PackedScene _endScene;
+    //
 
     private Node _parent;
     private Node _currentScene;
-
-    public static FlowManager Instance { get; private set; }
 
     public override async void _Ready()
     {
@@ -36,15 +47,26 @@ public partial class FlowManager : Node
 
 
     //Public functions
-    public void ChangeStateMenu()
+    public void ChangeState(GameState state)
     {
         UnloadScene();
-        LoadScene(_mainMenuScene);
-    }
 
-    public void ChangeStateGame()
-    {
-        UnloadScene();
-        LoadScene(_gameScene);
+        switch(state)
+        {
+            case GameState.MainMenu:
+            LoadScene(_mainMenuScene);
+            break;
+
+            case GameState.Game:
+            LoadScene(_gameScene);
+            break;
+
+            case GameState.End:
+            LoadScene(_endScene);
+            break;
+
+            default:
+            break;
+        }
     }
 }

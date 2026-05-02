@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ch0rx6fpivlow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
+bg_color = Color(0.66662186, 0.56475824, 0.64084667, 1)
+
+[node name="BackgroundPanel" type="Panel" unique_id=796898552]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vue75")

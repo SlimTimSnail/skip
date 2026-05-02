@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ddrj6dmpxgs5v"]
+
+[node name="TitlePanel" type="PanelContainer" unique_id=263178210]
+custom_minimum_size = Vector2(600, 100)
+custom_maximum_size = Vector2(600, 100)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 165.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="." unique_id=404828302]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+text = "The Skipping Game"
+horizontal_alignment = 1
+vertical_alignment = 1
