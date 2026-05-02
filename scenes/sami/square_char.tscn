@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bimusy4pv0mba"]
 
 [ext_resource type="Script" uid="uid://b42k2lrpypwka" path="res://scripts/SquareChar.cs" id="1_o1cqj"]
+[ext_resource type="Texture2D" uid="uid://dc7aidn8dss2s" path="res://sprites/sprite_rope_back.png" id="2_ht326"]
+[ext_resource type="Texture2D" uid="uid://dw8joh78t6ppc" path="res://sprites/sprite_rope_front.png" id="3_8c4bf"]
 
 [sub_resource type="Gradient" id="Gradient_u0ytb"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -12,11 +14,23 @@ fill_to = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl68t"]
 size = Vector2(64, 64)
 
-[node name="Square" type="CharacterBody2D" unique_id=1084824665]
+[node name="Square" type="CharacterBody2D" unique_id=1084824665 node_paths=PackedStringArray("_ropeFront", "_ropeBack")]
 script = ExtResource("1_o1cqj")
+_ropeFront = NodePath("RopeFront")
+_ropeBack = NodePath("RopeBack")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1672123121]
+[node name="RopeBack" type="Sprite2D" parent="." unique_id=859232112]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_ht326")
+offset = Vector2(6, -29)
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1672123121]
 texture = SubResource("GradientTexture2D_o1cqj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140031657]
 shape = SubResource("RectangleShape2D_nl68t")
+
+[node name="RopeFront" type="Sprite2D" parent="." unique_id=2071032943]
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_8c4bf")
+offset = Vector2(6, -29)
