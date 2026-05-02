@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bimusy4pv0mba" path="res://scenes/sami/square_char.tscn" id="1_bl6cx"]
 [ext_resource type="Script" uid="uid://c0w1dwy1htnmg" path="res://scripts/GameScreen.cs" id="1_n1bf0"]
-[ext_resource type="Script" uid="uid://butr4m2jde8if" path="res://scripts/tim/PlayerCamera.cs" id="3_i381x"]
+[ext_resource type="PackedScene" uid="uid://bgcnxwjfnsb2h" path="res://scenes/tim/player_camera.tscn" id="3_i381x"]
 
 [sub_resource type="Gradient" id="Gradient_34su8"]
 colors = PackedColorArray(0.078431375, 0.078431375, 0.078431375, 1, 0.078431375, 0.078431375, 0.078431375, 1)
@@ -32,10 +32,8 @@ shape = SubResource("RectangleShape2D_n1bf0")
 position = Vector2(960, 896.02)
 _gravity = 2000.0
 
-[node name="PlayerCamera" type="Camera2D" parent="." unique_id=1549221678 node_paths=PackedStringArray("_playerNode")]
-position = Vector2(956, 712)
-script = ExtResource("3_i381x")
+[node name="PlayerCamera" parent="." unique_id=1381443440 node_paths=PackedStringArray("_playerNode") instance=ExtResource("3_i381x")]
+position = Vector2(956, 700)
 _playerNode = NodePath("../Square")
-metadata/_custom_type_script = "uid://butr4m2jde8if"
 
 [connection signal="PlayerLose" from="Square" to="." method="GoToEnd"]
