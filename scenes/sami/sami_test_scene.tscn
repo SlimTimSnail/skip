@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://0ewthgna2jip"]
+
+[ext_resource type="PackedScene" uid="uid://bimusy4pv0mba" path="res://scenes/sami/square_char.tscn" id="1_bl6cx"]
+
+[sub_resource type="Gradient" id="Gradient_34su8"]
+colors = PackedColorArray(0.078431375, 0.078431375, 0.078431375, 1, 0.078431375, 0.078431375, 0.078431375, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bl6cx"]
+gradient = SubResource("Gradient_34su8")
+width = 100
+height = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bf0"]
+size = Vector2(100, 100)
+
+[node name="SamiTestScene" type="Node2D" unique_id=1119504895]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1179893898]
+position = Vector2(956.0001, 1181)
+scale = Vector2(19.2, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=374057709]
+texture = SubResource("GradientTexture2D_bl6cx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1364892853]
+shape = SubResource("RectangleShape2D_n1bf0")
+
+[node name="Square" parent="." unique_id=1084824665 instance=ExtResource("1_bl6cx")]
+position = Vector2(592, 930)
