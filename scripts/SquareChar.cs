@@ -12,6 +12,9 @@ public partial class SquareChar : CharacterBody2D
 	private float _gravity = 1000f;
 
 	[Export]
+	private float _ropeSpeed = 3f;
+
+	[Export]
 	private Node2D _ropeFront = null;
 
 	[Export]
@@ -31,6 +34,10 @@ public partial class SquareChar : CharacterBody2D
 		if (Input.IsActionJustPressed("action") && IsOnFloor())
 		{
 			vel.Y = _jumpVelocity;
+		}
+		else if (Input.IsActionJustReleased("action") && vel.Y < 0)
+		{
+			vel.Y /= 2;
 		}
 
 		vel.X = 0;
