@@ -8,7 +8,8 @@ public partial class FlowManager : Node
     {
         MainMenu,
         Game,
-        End,
+        LoseMenu,
+        WinMenu,
     }
 
     public static FlowManager Instance { get; private set; }
@@ -19,7 +20,9 @@ public partial class FlowManager : Node
     [Export]
     private PackedScene _gameScene;
     [Export]
-    private PackedScene _endScene;
+    private PackedScene _loseMenuScene;
+    [Export]
+    private PackedScene _winMenuScene;
     //
 
     private Node _parent;
@@ -66,8 +69,13 @@ public partial class FlowManager : Node
             AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Game);
             break;
 
-            case GameState.End:
-            LoadScene(_endScene);
+            case GameState.LoseMenu:
+            LoadScene(_loseMenuScene);
+            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Menu);
+            break;
+
+            case GameState.WinMenu:
+            LoadScene(_winMenuScene);
             AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Menu);
             break;
 

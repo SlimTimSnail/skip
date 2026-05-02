@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bsupcjkgb601q"]
+
+[ext_resource type="Script" uid="uid://dtl3l5rlchvwg" path="res://scripts/tim/EndMenu.cs" id="1_vjrgt"]
+[ext_resource type="PackedScene" uid="uid://ch0rx6fpivlow" path="res://scenes/ui/background_panel.tscn" id="2_vta1q"]
+[ext_resource type="PackedScene" uid="uid://ddrj6dmpxgs5v" path="res://scenes/ui/title_panel.tscn" id="3_opntt"]
+[ext_resource type="PackedScene" uid="uid://b65jpdwtgst0c" path="res://scenes/ui/button_panel.tscn" id="4_3bfga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpt1n"]
+bg_color = Color(0.43371266, 0.6760842, 0.30581462, 1)
+
+[node name="EndMenu" type="Control" unique_id=1137740576 node_paths=PackedStringArray("_replayButton", "_leaveButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjrgt")
+_replayButton = NodePath("ButtonPanel/VBoxContainer/CustomButton01")
+_leaveButton = NodePath("ButtonPanel/VBoxContainer/CustomButton02")
+
+[node name="BackgroundPanel" parent="." unique_id=796898552 instance=ExtResource("2_vta1q")]
+layout_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_lpt1n")
+
+[node name="TitlePanel" parent="." unique_id=263178210 instance=ExtResource("3_opntt")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 680.0
+offset_bottom = 180.0
+grow_horizontal = 1
+
+[node name="Label" parent="TitlePanel" index="0" unique_id=404828302]
+text = "You Fricken Won!!"
+
+[node name="ButtonPanel" parent="." unique_id=1546858874 instance=ExtResource("4_3bfga")]
+layout_mode = 1
+anchors_preset = 4
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 130.0
+offset_right = 630.00073
+grow_horizontal = 1
+
+[node name="CustomButton01" parent="ButtonPanel/VBoxContainer" parent_id_path=PackedInt32Array(1546858874, 1541257172) index="0" unique_id=460092577]
+text = "Play Again"
+
+[node name="CustomButton02" parent="ButtonPanel/VBoxContainer" parent_id_path=PackedInt32Array(1546858874, 1541257172) index="1" unique_id=1031077008]
+text = "Return to Menu"
+
+[editable path="TitlePanel"]
+[editable path="ButtonPanel"]
