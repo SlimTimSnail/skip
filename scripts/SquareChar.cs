@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 public partial class SquareChar : CharacterBody2D
 {
@@ -26,17 +28,19 @@ public partial class SquareChar : CharacterBody2D
 			vel.Y = _jumpVelocity;
 		}
 
-		if (Input.IsActionPressed("move_left"))
+		vel.X = 0;
+
+		if (IsOnFloor())
 		{
-			vel.X = -_speed;
-		}
-		else if (Input.IsActionPressed("move_right"))
-		{
-			vel.X = _speed;
-		}
-		else
-		{
-			vel.X = 0;
+			if (Input.IsActionPressed("move_left"))
+			{
+				vel.X = -_speed;
+			}
+			
+			if (Input.IsActionPressed("move_right"))
+			{
+				vel.X = _speed;
+			}
 		}
 
 		Velocity = vel;

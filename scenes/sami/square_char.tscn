@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bimusy4pv0mba"]
 
-[ext_resource type="Script" uid="uid://b42k2lrpypwka" path="res://scenes/sami/SquareChar.cs" id="1_o1cqj"]
+[ext_resource type="Script" uid="uid://b42k2lrpypwka" path="res://scripts/SquareChar.cs" id="1_o1cqj"]
 
 [sub_resource type="Gradient" id="Gradient_u0ytb"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)

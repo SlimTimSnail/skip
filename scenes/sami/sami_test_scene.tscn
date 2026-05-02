@@ -27,3 +27,5 @@ shape = SubResource("RectangleShape2D_n1bf0")
 
 [node name="Square" parent="." unique_id=1084824665 instance=ExtResource("1_bl6cx")]
 position = Vector2(592, 930)
+_jumpVelocity = -400.0
+_gravity = 2000.0
