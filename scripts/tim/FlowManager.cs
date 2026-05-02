@@ -76,7 +76,7 @@ public partial class FlowManager : Node
 
             case GameState.WinMenu:
             LoadScene(_winMenuScene);
-            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Menu);
+            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Game);
             break;
 
             default:
