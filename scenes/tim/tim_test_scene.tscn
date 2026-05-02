@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cg4e7qtylvssi"]
 
-[ext_resource type="Script" uid="uid://b4832au4ehuot" path="res://scripts/tim/TimTestScript.cs" id="1_m10iy"]
+[sub_resource type="Gradient" id="Gradient_mjepw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m10iy"]
+gradient = SubResource("Gradient_mjepw")
 
 [node name="TimTestScene" type="Node2D" unique_id=1642360528]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=880332853]
-script = ExtResource("1_m10iy")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=89149942]
+position = Vector2(937, 522)
+texture = SubResource("GradientTexture2D_m10iy")
