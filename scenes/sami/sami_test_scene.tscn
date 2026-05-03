@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bimusy4pv0mba" path="res://scenes/sami/player.tscn" id="1_bl6cx"]
 [ext_resource type="Script" uid="uid://c0w1dwy1htnmg" path="res://scripts/GameScreen.cs" id="1_n1bf0"]
+[ext_resource type="Script" uid="uid://nubwghkv1epd" path="res://scripts/TreeSpawner.cs" id="2_wrnl8"]
 [ext_resource type="PackedScene" uid="uid://bgcnxwjfnsb2h" path="res://scenes/tim/player_camera.tscn" id="3_i381x"]
 [ext_resource type="PackedScene" uid="uid://842thdmbcq03" path="res://scenes/tim/checkpoint.tscn" id="4_8hi2w"]
 
@@ -28,60 +29,12 @@ size = Vector2(1, 1)
 script = ExtResource("1_n1bf0")
 player = NodePath("Player")
 
-[node name="Trees" type="Node2D" parent="." unique_id=676069963]
+[node name="Trees" type="Node2D" parent="." unique_id=676069963 node_paths=PackedStringArray("_baseTree")]
+script = ExtResource("2_wrnl8")
+_baseTree = NodePath("Tree 1")
 
 [node name="Tree 1" type="Sprite2D" parent="Trees" unique_id=1755510953]
 position = Vector2(1000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 2" type="Sprite2D" parent="Trees" unique_id=37104549]
-position = Vector2(2000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 3" type="Sprite2D" parent="Trees" unique_id=626405631]
-position = Vector2(3000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 4" type="Sprite2D" parent="Trees" unique_id=1587641572]
-position = Vector2(4000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 5" type="Sprite2D" parent="Trees" unique_id=1451422867]
-position = Vector2(5000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 6" type="Sprite2D" parent="Trees" unique_id=2104599015]
-position = Vector2(6000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 7" type="Sprite2D" parent="Trees" unique_id=722371964]
-position = Vector2(7000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 8" type="Sprite2D" parent="Trees" unique_id=1935519510]
-position = Vector2(8000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 9" type="Sprite2D" parent="Trees" unique_id=78394088]
-position = Vector2(9000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 10" type="Sprite2D" parent="Trees" unique_id=829012425]
-position = Vector2(10000, 800)
-scale = Vector2(122, 500)
-texture = SubResource("GradientTexture2D_wrnl8")
-
-[node name="Tree 11" type="Sprite2D" parent="Trees" unique_id=1069701404]
-position = Vector2(11000, 800)
 scale = Vector2(122, 500)
 texture = SubResource("GradientTexture2D_wrnl8")
 
