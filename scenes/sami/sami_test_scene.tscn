@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0ewthgna2jip"]
 
-[ext_resource type="PackedScene" uid="uid://bimusy4pv0mba" path="res://scenes/sami/square_char.tscn" id="1_bl6cx"]
+[ext_resource type="PackedScene" uid="uid://bimusy4pv0mba" path="res://scenes/sami/player.tscn" id="1_bl6cx"]
 [ext_resource type="Script" uid="uid://c0w1dwy1htnmg" path="res://scripts/GameScreen.cs" id="1_n1bf0"]
 [ext_resource type="PackedScene" uid="uid://bgcnxwjfnsb2h" path="res://scenes/tim/player_camera.tscn" id="3_i381x"]
 [ext_resource type="PackedScene" uid="uid://842thdmbcq03" path="res://scenes/tim/checkpoint.tscn" id="4_8hi2w"]
@@ -26,7 +26,7 @@ size = Vector2(1, 1)
 
 [node name="SamiTestScene" type="Node2D" unique_id=1119504895 node_paths=PackedStringArray("player")]
 script = ExtResource("1_n1bf0")
-player = NodePath("Square")
+player = NodePath("Player")
 
 [node name="Trees" type="Node2D" parent="." unique_id=676069963]
 
@@ -122,7 +122,7 @@ position = Vector2(15000, 901)
 position = Vector2(21773, 902)
 _isFinalCheckpoint = true
 
-[node name="Square" parent="." unique_id=1084824665 instance=ExtResource("1_bl6cx")]
+[node name="Player" parent="." unique_id=1084824665 instance=ExtResource("1_bl6cx")]
 position = Vector2(379, 897)
 _gravity = 2000.0
 _ropeSpeedIncrease = 0.5
@@ -130,4 +130,4 @@ _fastStartingRopeSpeed = 6.5
 _fastRopeSpeedIncrease = 0.25
 
 [node name="PlayerCamera" parent="." unique_id=1381443440 node_paths=PackedStringArray("_playerNode") instance=ExtResource("3_i381x")]
-_playerNode = NodePath("../Square")
+_playerNode = NodePath("../Player")

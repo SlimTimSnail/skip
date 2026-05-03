@@ -3,7 +3,7 @@ using Godot;
 public partial class GameScreen : Node
 {
 	[Export]
-	private SquareChar player = null;
+	private Player player = null;
 
 	public override void _Ready()
 	{

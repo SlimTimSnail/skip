@@ -14,7 +14,7 @@ public partial class Checkpoint : Area2D
 
     private void OnOverlap(Node2D body)
     {
-        if (body is SquareChar player)
+        if (body is Player player)
         {
             player.CheckpointOverlapped(_isFinalCheckpoint);
         }

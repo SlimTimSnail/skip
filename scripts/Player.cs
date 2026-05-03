@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class SquareChar : CharacterBody2D
+public partial class Player : CharacterBody2D
 {
 	private const float LOSE_RANGE_MIN = 120f;
 	private const float LOSE_RANGE_MAX = 230f;
