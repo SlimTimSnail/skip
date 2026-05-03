@@ -3,6 +3,12 @@ using System;
 
 public partial class SquareChar : CharacterBody2D
 {
+	private const float LOSE_RANGE_MIN = 120f;
+	private const float LOSE_RANGE_MAX = 230f;
+
+	private const float FAST_RANGE_MIN = 120f;
+	private const float FAST_RANGE_MAX = 230f;
+
 	public event Action PlayerLose = null;
 	public event Action PlayerWin = null;
 
@@ -16,10 +22,16 @@ public partial class SquareChar : CharacterBody2D
 	private float _gravity = 1000f;
 
 	[Export]
-	private float _ropeSpeed = 3f;
+	private float _startingRopeSpeed = 1f;
 
 	[Export]
-	private float _fastRopeSpeed = 6f;
+	private float _ropeSpeedIncrease = 3f;
+
+	[Export]
+	private float _fastStartingRopeSpeed = 6f;
+
+	[Export]
+	private float _fastRopeSpeedIncrease = 3f;
 
 	[Export]
 	private Node2D _ropeFront = null;
@@ -27,12 +39,18 @@ public partial class SquareChar : CharacterBody2D
 	[Export]
 	private Node2D _ropeBack = null;
 
+	private float _ropeSpeed = 1f;
+
+	private float _fastRopeSpeed = 1f;
+
 	private float _rotationDegrees = 0;
 
 	private bool _hasLost = false;
 
 	public override void _Ready()
 	{
+		_ropeSpeed = _startingRopeSpeed;
+		_fastRopeSpeed = _fastStartingRopeSpeed;
 		_rotationDegrees = _ropeFront.RotationDegrees;
 	}
 
@@ -78,22 +96,47 @@ public partial class SquareChar : CharacterBody2D
 
 		MoveAndSlide();
 
-		float clampedDegrees = _rotationDegrees % 360f;
-		bool inLoseZone = clampedDegrees >= 120f && clampedDegrees <= 240f;
+		bool inLoseRange = InLoseRange(_rotationDegrees);
 
-		if (inLoseZone && IsOnFloor())
+		if (inLoseRange && IsOnFloor())
 		{
 			PlayerLose?.Invoke();
 			_hasLost = true;
 			return;
 		}
 
-		bool inFastZone = clampedDegrees >= 100f && clampedDegrees <= 240f;
+		bool inFastRange = InFastRange(_rotationDegrees);
 
-		_rotationDegrees += inFastZone ? _fastRopeSpeed : _ropeSpeed;
+		float oldDegrees = _rotationDegrees;
+		_rotationDegrees += inFastRange ? _fastRopeSpeed : _ropeSpeed;
 
 		_ropeFront.RotationDegrees = _rotationDegrees;
 		_ropeBack.RotationDegrees = _rotationDegrees;
+
+		if (InLoseRange(oldDegrees) && !InLoseRange(_rotationDegrees))
+		{
+			SucceedSkip();
+		}
+	}
+
+	private bool InFastRange(float rotation)
+	{
+		float clampedDegrees = rotation % 360;
+
+		return clampedDegrees >= FAST_RANGE_MIN && clampedDegrees <= FAST_RANGE_MAX;
+	}
+
+	private bool InLoseRange(float rotation)
+	{
+		float clampedDegrees = rotation % 360;
+
+		return clampedDegrees >= LOSE_RANGE_MIN && clampedDegrees <= LOSE_RANGE_MAX;
+	}
+
+	private void SucceedSkip()
+	{
+		_ropeSpeed += _ropeSpeedIncrease;
+		_fastRopeSpeed += _fastRopeSpeedIncrease;
 	}
 
 	public void CheckpointOverlapped(bool isFinal)
@@ -104,7 +147,8 @@ public partial class SquareChar : CharacterBody2D
 		}
 		else
 		{
-			//sami do the rope speed reset
+			_ropeSpeed = _startingRopeSpeed;
+			_fastRopeSpeed = _fastStartingRopeSpeed;
 		}
 	}
 }
