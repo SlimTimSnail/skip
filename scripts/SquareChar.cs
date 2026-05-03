@@ -127,6 +127,11 @@ public partial class SquareChar : CharacterBody2D
 		{
 			SucceedSkip();
 		}
+
+		if (!InFastRange(oldDegrees) && InFastRange(_rotationDegrees))
+		{
+			HitFastRange();
+		}
 	}
 
 	private bool InFastRange(float rotation)
@@ -147,6 +152,11 @@ public partial class SquareChar : CharacterBody2D
 	{
 		_ropeSpeed += _ropeSpeedIncrease;
 		_fastRopeSpeed += _fastRopeSpeedIncrease;
+	}
+
+	private void HitFastRange()
+	{
+		
 	}
 
 	public void CheckpointOverlapped(bool isFinal)
