@@ -4,6 +4,7 @@ using System;
 public partial class SquareChar : CharacterBody2D
 {
 	public event Action PlayerLose = null;
+	public event Action PlayerWin = null;
 
 	[Export]
 	private float _speed = 500f;
@@ -93,6 +94,13 @@ public partial class SquareChar : CharacterBody2D
 
 	public void CheckpointOverlapped(bool isFinal)
 	{
-		
+		if (isFinal == true)
+		{
+			PlayerWin?.Invoke();
+		}
+		else
+		{
+			//sami do the rope speed reset
+		}
 	}
 }

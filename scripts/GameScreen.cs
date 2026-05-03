@@ -8,10 +8,16 @@ public partial class GameScreen : Node
 	public override void _Ready()
 	{
 		player.PlayerLose += GoToEnd;
+		player.PlayerWin += GoToWin;
 	}
 
 	public void GoToEnd()
 	{
 		FlowManager.Instance.ChangeState(FlowManager.GameState.LoseMenu);
+	}
+
+	public void GoToWin()
+	{
+		FlowManager.Instance.ChangeState(FlowManager.GameState.WinMenu);
 	}
 }
