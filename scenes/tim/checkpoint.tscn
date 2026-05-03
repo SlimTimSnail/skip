@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://842thdmbcq03"]
+
+[ext_resource type="Script" uid="uid://hdcqj8jm1qxt" path="res://scripts/tim/Checkpoint.cs" id="1_qx6gg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx6gg"]
+size = Vector2(100, 100)
+
+[sub_resource type="Gradient" id="Gradient_ye3ef"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4eh3u"]
+gradient = SubResource("Gradient_ye3ef")
+
+[node name="Checkpoint" type="Area2D" unique_id=607079476]
+script = ExtResource("1_qx6gg")
+metadata/_custom_type_script = "uid://hdcqj8jm1qxt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410061539]
+shape = SubResource("RectangleShape2D_qx6gg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=31454763]
+scale = Vector2(1.5, 1.5)
+texture = SubResource("GradientTexture2D_4eh3u")
