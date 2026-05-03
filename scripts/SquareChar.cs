@@ -56,6 +56,8 @@ public partial class SquareChar : CharacterBody2D
 
 	private bool _hasLost = false;
 
+	private bool _onFloorLastFrame = false;
+
 	public override void _Ready()
 	{
 		_ropeSpeed = _startingRopeSpeed;
@@ -132,6 +134,13 @@ public partial class SquareChar : CharacterBody2D
 		{
 			HitFastRange();
 		}
+
+		if (!_onFloorLastFrame && IsOnFloor())
+		{
+			Land();
+		}
+
+		_onFloorLastFrame = IsOnFloor();
 	}
 
 	private bool InFastRange(float rotation)
@@ -160,6 +169,11 @@ public partial class SquareChar : CharacterBody2D
 		{
 			_ropeSound.Play();
 		}
+	}
+
+	private void Land()
+	{
+		_landSound.Play();
 	}
 
 	public void CheckpointOverlapped(bool isFinal)
