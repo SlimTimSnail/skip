@@ -1,13 +1,12 @@
 [gd_resource type="AudioStreamRandomizer" format=3 uid="uid://ueca8p2f3p4c"]
 
-[ext_resource type="AudioStream" uid="uid://5tiv60f80pci" path="res://audio/audio_files/WHOOSH_Air_Fast_Bright_RR1_mono.wav" id="1_ueh8y"]
-[ext_resource type="AudioStream" uid="uid://bv8osu8ygquuu" path="res://audio/audio_files/WHOOSH_Air_Fast_Bright_RR2_mono.wav" id="2_txuof"]
-[ext_resource type="AudioStream" uid="uid://ceh8ypmn532p7" path="res://audio/audio_files/WHOOSH_Air_Fast_Bright_RR3_mono.wav" id="3_ib8hg"]
-[ext_resource type="AudioStream" uid="uid://coeenjsawwvcd" path="res://audio/audio_files/WHOOSH_Air_Fast_Bright_RR4_mono.wav" id="4_r3cmv"]
+[ext_resource type="AudioStream" uid="uid://bvy1qfs8y2mtn" path="res://audio/audio_files/game/8BIT_RETRO_Hit_Bump_Distorted_Tap_Bright_mono.wav" id="1_lq4b0"]
+[ext_resource type="AudioStream" uid="uid://bq5e4i1j55vg1" path="res://audio/audio_files/game/8BIT_RETRO_Hit_Bump_Distorted_Tap_mono.wav" id="2_ueh8y"]
+[ext_resource type="AudioStream" uid="uid://b284du3gk0k7t" path="res://audio/audio_files/game/8BIT_RETRO_Hit_Bump_Distorted_Thud_mono.wav" id="3_txuof"]
 
 [resource]
-streams_count = 4
-stream_0/stream = ExtResource("1_ueh8y")
-stream_1/stream = ExtResource("2_txuof")
-stream_2/stream = ExtResource("3_ib8hg")
-stream_3/stream = ExtResource("4_r3cmv")
+random_pitch = 1.122462
+streams_count = 3
+stream_0/stream = ExtResource("1_lq4b0")
+stream_1/stream = ExtResource("2_ueh8y")
+stream_2/stream = ExtResource("3_txuof")

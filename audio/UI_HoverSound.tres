@@ -1,6 +1,6 @@
 [gd_resource type="AudioStreamRandomizer" format=3 uid="uid://om0soj0onq61"]
 
-[ext_resource type="AudioStream" uid="uid://dm8e67wl5n57d" path="res://audio/audio_files/UI_Beep_Single_Subtle_Muffled_stereo.wav" id="1_waxas"]
+[ext_resource type="AudioStream" uid="uid://dm8e67wl5n57d" path="res://audio/audio_files/ui/UI_Beep_Single_Subtle_Muffled_stereo.wav" id="1_waxas"]
 
 [resource]
 random_pitch = 1.2599211

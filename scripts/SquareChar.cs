@@ -156,7 +156,10 @@ public partial class SquareChar : CharacterBody2D
 
 	private void HitFastRange()
 	{
-		
+		if (!IsOnFloor())
+		{
+			_ropeSound.Play();
+		}
 	}
 
 	public void CheckpointOverlapped(bool isFinal)

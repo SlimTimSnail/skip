@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c6wuhk8jw6lt5"]
 
 [ext_resource type="Script" uid="uid://cqex5exp5u131" path="res://scripts/tim/AudioManager.cs" id="1_id806"]
-[ext_resource type="AudioStream" uid="uid://cv2ct8sdb2cbx" path="res://audio/audio_files/SynthRaveMenu.mp3" id="2_rsxga"]
-[ext_resource type="AudioStream" uid="uid://dtys5fs36vs3a" path="res://audio/audio_files/SYNTHRAVE.mp3" id="3_twysj"]
+[ext_resource type="AudioStream" uid="uid://cv2ct8sdb2cbx" path="res://audio/audio_files/music/SynthRaveMenu.mp3" id="2_rsxga"]
+[ext_resource type="AudioStream" uid="uid://dtys5fs36vs3a" path="res://audio/audio_files/music/SYNTHRAVE.mp3" id="3_twysj"]
 
 [node name="AudioManager" type="Node" unique_id=1079762041 node_paths=PackedStringArray("_musicMenu", "_musicGame")]
 script = ExtResource("1_id806")

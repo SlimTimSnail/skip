@@ -10,3 +10,6 @@ position_smoothing_speed = 2.5
 editor_draw_limits = true
 script = ExtResource("1_r8e5q")
 metadata/_custom_type_script = "uid://butr4m2jde8if"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1768469443]
+current = true

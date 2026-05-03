@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ch0rx6fpivlow" path="res://scenes/ui/background_panel.tscn" id="2_vta1q"]
 [ext_resource type="PackedScene" uid="uid://ddrj6dmpxgs5v" path="res://scenes/ui/title_panel.tscn" id="3_opntt"]
 [ext_resource type="PackedScene" uid="uid://b65jpdwtgst0c" path="res://scenes/ui/button_panel.tscn" id="4_3bfga"]
-[ext_resource type="AudioStream" uid="uid://ij35eayohwhb" path="res://audio/audio_files/102437__shawshank73__scottstoked_yeehaw.wav" id="5_vta1q"]
+[ext_resource type="AudioStream" uid="uid://ij35eayohwhb" path="res://audio/audio_files/ui/102437__shawshank73__scottstoked_yeehaw.wav" id="5_vta1q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpt1n"]
 bg_color = Color(0.43371266, 0.6760842, 0.30581462, 1)
