@@ -15,8 +15,9 @@ height = 100
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bf0"]
 size = Vector2(100, 100)
 
-[node name="SamiTestScene" type="Node2D" unique_id=1119504895]
+[node name="SamiTestScene" type="Node2D" unique_id=1119504895 node_paths=PackedStringArray("player")]
 script = ExtResource("1_n1bf0")
+player = NodePath("Square")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1179893898]
 position = Vector2(960, 1100)
@@ -34,5 +35,3 @@ _gravity = 2000.0
 
 [node name="PlayerCamera" parent="." unique_id=1381443440 node_paths=PackedStringArray("_playerNode") instance=ExtResource("3_i381x")]
 _playerNode = NodePath("../Square")
-
-[connection signal="PlayerLose" from="Square" to="." method="GoToEnd"]

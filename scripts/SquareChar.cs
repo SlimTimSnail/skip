@@ -1,9 +1,9 @@
 using Godot;
+using System;
 
 public partial class SquareChar : CharacterBody2D
 {
-	[Signal]
-	public delegate void PlayerLoseEventHandler();
+	public event Action PlayerLose = null;
 
 	[Export]
 	private float _speed = 500f;
@@ -77,7 +77,8 @@ public partial class SquareChar : CharacterBody2D
 
 		if (inLoseZone && IsOnFloor())
 		{
-			EmitSignal(SignalName.PlayerLose);
+			PlayerLose?.Invoke();
+			//EmitSignal(SignalName.PlayerLose);
 			_hasLost = true;
 			return;
 		}
