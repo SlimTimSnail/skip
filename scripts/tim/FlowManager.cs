@@ -15,14 +15,31 @@ public partial class FlowManager : Node
     public static FlowManager Instance { get; private set; }
 
     // Export variables
+    [ExportGroup("Game States")]
+
+    [ExportSubgroup("Main Menu")]
     [Export]
     private PackedScene _mainMenuScene;
     [Export]
+    private AudioManager.MusicSelect _mainMenuTrack;
+
+    [ExportSubgroup("Game")]
+    [Export]
     private PackedScene _gameScene;
+    [Export]
+    private AudioManager.MusicSelect _gameTrack;
+
+    [ExportSubgroup("Lose Menu")]
     [Export]
     private PackedScene _loseMenuScene;
     [Export]
+    private AudioManager.MusicSelect _loseTrack;
+
+    [ExportSubgroup("Win Menu")]
+    [Export]
     private PackedScene _winMenuScene;
+    [Export]
+    private AudioManager.MusicSelect _winTrack;
     //
 
     private Node _parent;
@@ -61,22 +78,22 @@ public partial class FlowManager : Node
         {
             case GameState.MainMenu:
             LoadScene(_mainMenuScene);
-            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Menu);
+            AudioManager.Instance.SwitchMusicTrack(_mainMenuTrack);
             break;
 
             case GameState.Game:
             LoadScene(_gameScene);
-            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Game);
+            AudioManager.Instance.SwitchMusicTrack(_gameTrack);
             break;
 
             case GameState.LoseMenu:
             LoadScene(_loseMenuScene);
-            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Menu);
+            AudioManager.Instance.SwitchMusicTrack(_loseTrack);
             break;
 
             case GameState.WinMenu:
             LoadScene(_winMenuScene);
-            AudioManager.Instance.SwitchMusicTrack(AudioManager.MusicSelect.Game);
+            AudioManager.Instance.SwitchMusicTrack(_winTrack);
             break;
 
             default:

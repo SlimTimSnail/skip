@@ -10,6 +10,7 @@
 script = ExtResource("1_gwol5")
 _mainMenuScene = ExtResource("2_xncug")
 _gameScene = ExtResource("3_cxxkg")
+_gameTrack = 1
 _loseMenuScene = ExtResource("4_wknot")
 _winMenuScene = ExtResource("5_n5lmy")
 metadata/_custom_type_script = "uid://c4188cnd4i4e8"
