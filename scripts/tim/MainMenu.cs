@@ -17,13 +17,11 @@ public partial class MainMenu : Node
 
     private void OnPlayButtonPressed()
     {
-        GD.Print("Play Button was clicked!");
         FlowManager.Instance.ChangeState(FlowManager.GameState.Game);
     }
 
     private void OnQuitButtonPressed()
     {
-        GD.Print("Quit Button was clicked!");
         GetTree().Quit();
     }
 }
