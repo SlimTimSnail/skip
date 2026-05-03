@@ -11,6 +11,7 @@ public partial class Player : CharacterBody2D
 
 	public event Action PlayerLose = null;
 	public event Action PlayerWin = null;
+	public event Action HitCheckpoint = null;
 
 	[Export]
 	private float _speed = 500f;
@@ -184,6 +185,7 @@ public partial class Player : CharacterBody2D
 		}
 		else
 		{
+			HitCheckpoint?.Invoke();
 			_ropeSpeed = _startingRopeSpeed;
 			_fastRopeSpeed = _fastStartingRopeSpeed;
 		}

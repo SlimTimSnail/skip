@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bkk1hgmagvdrr"]
+
+[ext_resource type="Script" uid="uid://cp7j5h0i340fv" path="res://scripts/tim/CheckpointClearedPopup.cs" id="1_4filq"]
+[ext_resource type="AudioStream" uid="uid://b50hm2frani23" path="res://audio/audio_files/ui/UI_Toggle_Voice_Tripe_Note_Enable_stereo.wav" id="1_jpy88"]
+
+[node name="CheckpointCleared" type="Control" unique_id=1179054579 node_paths=PackedStringArray("_audio", "_panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4filq")
+_audio = NodePath("AudioStreamPlayer")
+_panel = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1435550552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.0
+offset_top = -20.0
+offset_right = 78.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1077139082]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Checkpoint Cleared!"
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2020470741]
+stream = ExtResource("1_jpy88")
+volume_db = -5.0

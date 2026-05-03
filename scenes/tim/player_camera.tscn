@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgcnxwjfnsb2h"]
 
 [ext_resource type="Script" uid="uid://butr4m2jde8if" path="res://scripts/tim/PlayerCamera.cs" id="1_r8e5q"]
+[ext_resource type="PackedScene" uid="uid://bkk1hgmagvdrr" path="res://scenes/ui/checkpoint_cleared.tscn" id="2_xukj5"]
 
 [node name="PlayerCamera" type="Camera2D" unique_id=1381443440]
 process_callback = 0
@@ -13,3 +14,5 @@ metadata/_custom_type_script = "uid://butr4m2jde8if"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1768469443]
 current = true
+
+[node name="CheckpointCleared" parent="." unique_id=1179054579 instance=ExtResource("2_xukj5")]

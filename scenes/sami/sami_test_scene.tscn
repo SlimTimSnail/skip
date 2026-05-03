@@ -131,3 +131,8 @@ _fastRopeSpeedIncrease = 0.25
 
 [node name="PlayerCamera" parent="." unique_id=1381443440 node_paths=PackedStringArray("_playerNode") instance=ExtResource("3_i381x")]
 _playerNode = NodePath("../Player")
+
+[node name="CheckpointCleared" parent="PlayerCamera" index="1" unique_id=1179054579 node_paths=PackedStringArray("_player")]
+_player = NodePath("../../Player")
+
+[editable path="PlayerCamera"]
