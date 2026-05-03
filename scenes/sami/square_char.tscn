@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dw8joh78t6ppc" path="res://sprites/sprite_rope_front.png" id="3_8c4bf"]
 [ext_resource type="AudioStream" uid="uid://vtquhwg416og" path="res://audio/Game_JumpSound.tres" id="4_yeuhq"]
 [ext_resource type="AudioStream" uid="uid://cugt6i8vmhmq7" path="res://audio/Game_RopeSound.tres" id="5_8arqi"]
+[ext_resource type="AudioStream" uid="uid://ueca8p2f3p4c" path="res://audio/Game_LandSound.tres" id="5_wlka2"]
 
 [sub_resource type="Gradient" id="Gradient_u0ytb"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -16,13 +17,13 @@ fill_to = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl68t"]
 size = Vector2(64, 64)
 
-[node name="Square" type="CharacterBody2D" unique_id=1084824665 node_paths=PackedStringArray("_ropeFront", "_ropeBack")]
+[node name="Square" type="CharacterBody2D" unique_id=1084824665 node_paths=PackedStringArray("_ropeFront", "_ropeBack", "_jumpSound", "_landSound", "_ropeSound")]
 script = ExtResource("1_o1cqj")
-_ropeSpeedIncrease = 0.5
-_fastStartingRopeSpeed = 6.5
-_fastRopeSpeedIncrease = 0.25
 _ropeFront = NodePath("RopeFront")
 _ropeBack = NodePath("RopeBack")
+_jumpSound = NodePath("JumpSound")
+_landSound = NodePath("LandSound")
+_ropeSound = NodePath("RopeSound")
 
 [node name="RopeBack" type="Sprite2D" parent="." unique_id=859232112]
 rotation = 4.2062435
@@ -44,6 +45,10 @@ offset = Vector2(6, -29)
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=532870710]
 stream = ExtResource("4_yeuhq")
+volume_db = -5.0
+
+[node name="LandSound" type="AudioStreamPlayer2D" parent="." unique_id=444693126]
+stream = ExtResource("5_wlka2")
 volume_db = -5.0
 
 [node name="RopeSound" type="AudioStreamPlayer2D" parent="." unique_id=1059826111]

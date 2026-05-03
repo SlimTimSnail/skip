@@ -39,6 +39,15 @@ public partial class SquareChar : CharacterBody2D
 	[Export]
 	private Node2D _ropeBack = null;
 
+	[Export]
+	private AudioStreamPlayer2D _jumpSound = null;
+
+	[Export]
+	private AudioStreamPlayer2D _landSound = null;
+
+	[Export]
+	private AudioStreamPlayer2D _ropeSound = null;
+
 	private float _ropeSpeed = 1f;
 
 	private float _fastRopeSpeed = 1f;
@@ -71,6 +80,7 @@ public partial class SquareChar : CharacterBody2D
 		if (Input.IsActionJustPressed("action") && IsOnFloor())
 		{
 			vel.Y = _jumpVelocity;
+			_jumpSound.Play();
 		}
 		else if (Input.IsActionJustReleased("action") && vel.Y < 0)
 		{
