@@ -6,7 +6,7 @@ public partial class Player : CharacterBody2D
 	private const float LOSE_RANGE_MIN = 120f;
 	private const float LOSE_RANGE_MAX = 230f;
 
-	private const float FAST_RANGE_MIN = 120f;
+	private const float FAST_RANGE_MIN = 90f;
 	private const float FAST_RANGE_MAX = 230f;
 
 	public event Action PlayerLose = null;
@@ -90,12 +90,8 @@ public partial class Player : CharacterBody2D
 					_invincible = !_invincible;
 
 					_body.Texture = _invincible ? _invincibleTexture : _originalTexture;
-
-					GD.Print("foo");
 				}
-				GD.Print("bar");
 			}
-			GD.Print("fubar");
 		}
 	}
 
@@ -181,7 +177,7 @@ public partial class Player : CharacterBody2D
 	{
 		float clampedDegrees = rotation % 360;
 
-		return clampedDegrees >= FAST_RANGE_MIN && clampedDegrees <= FAST_RANGE_MAX;
+		return clampedDegrees >= FAST_RANGE_MIN && clampedDegrees <= FAST_RANGE_MAX && !IsOnFloor();
 	}
 
 	private bool InLoseRange(float rotation)
