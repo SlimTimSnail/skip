@@ -7,6 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://cugt6i8vmhmq7" path="res://audio/Game_RopeSound.tres" id="5_8arqi"]
 [ext_resource type="AudioStream" uid="uid://ueca8p2f3p4c" path="res://audio/Game_LandSound.tres" id="5_wlka2"]
 
+[sub_resource type="Gradient" id="Gradient_ep88r"]
+colors = PackedColorArray(0.8117647, 0.7921569, 0, 1, 0.8117647, 0.7921569, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vl405"]
+gradient = SubResource("Gradient_ep88r")
+
 [sub_resource type="Gradient" id="Gradient_u0ytb"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
@@ -17,13 +23,15 @@ fill_to = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nl68t"]
 size = Vector2(64, 64)
 
-[node name="Player" type="CharacterBody2D" unique_id=1084824665 node_paths=PackedStringArray("_ropeFront", "_ropeBack", "_jumpSound", "_landSound", "_ropeSound")]
+[node name="Player" type="CharacterBody2D" unique_id=1084824665 node_paths=PackedStringArray("_ropeFront", "_ropeBack", "_jumpSound", "_landSound", "_ropeSound", "_body")]
 script = ExtResource("1_o1cqj")
 _ropeFront = NodePath("RopeFront")
 _ropeBack = NodePath("RopeBack")
 _jumpSound = NodePath("JumpSound")
 _landSound = NodePath("LandSound")
 _ropeSound = NodePath("RopeSound")
+_body = NodePath("Body")
+_invincibleTexture = SubResource("GradientTexture2D_vl405")
 
 [node name="RopeBack" type="Sprite2D" parent="." unique_id=859232112]
 rotation = 4.2062435

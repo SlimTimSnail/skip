@@ -49,6 +49,13 @@ public partial class Player : CharacterBody2D
 	[Export]
 	private AudioStreamPlayer2D _ropeSound = null;
 
+	[ExportGroup("Invincibility")]
+	[Export]
+	private Sprite2D _body = null;
+
+	[Export]
+	private Texture2D _invincibleTexture = null;
+
 	private float _ropeSpeed = 1f;
 
 	private float _fastRopeSpeed = 1f;
@@ -59,11 +66,37 @@ public partial class Player : CharacterBody2D
 
 	private bool _onFloorLastFrame = false;
 
+	private bool _invincible = false;
+
+	private Texture2D _originalTexture = null;
+
 	public override void _Ready()
 	{
 		_ropeSpeed = _startingRopeSpeed;
 		_fastRopeSpeed = _fastStartingRopeSpeed;
 		_rotationDegrees = _ropeFront.RotationDegrees;
+
+		_originalTexture = _body.Texture;
+	}
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventKey key && key.Pressed)
+		{
+			if (key.Keycode == Key.I)
+			{
+				if (OS.HasFeature("editor"))
+				{
+					_invincible = !_invincible;
+
+					_body.Texture = _invincible ? _invincibleTexture : _originalTexture;
+
+					GD.Print("foo");
+				}
+				GD.Print("bar");
+			}
+			GD.Print("fubar");
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -111,7 +144,7 @@ public partial class Player : CharacterBody2D
 
 		bool inLoseRange = InLoseRange(_rotationDegrees);
 
-		if (inLoseRange && IsOnFloor())
+		if (inLoseRange && IsOnFloor() && !_invincible)
 		{
 			PlayerLose?.Invoke();
 			_hasLost = true;
