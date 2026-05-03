@@ -10,29 +10,44 @@ colors = PackedColorArray(0.078431375, 0.078431375, 0.078431375, 1, 0.078431375,
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bl6cx"]
 gradient = SubResource("Gradient_34su8")
-width = 100
-height = 100
+width = 1
+height = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bf0"]
-size = Vector2(100, 100)
+size = Vector2(1, 1)
 
 [node name="SamiTestScene" type="Node2D" unique_id=1119504895 node_paths=PackedStringArray("player")]
 script = ExtResource("1_n1bf0")
 player = NodePath("Square")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1179893898]
-position = Vector2(960, 1100)
-scale = Vector2(19.2, 3)
+position = Vector2(50000, 1100)
+scale = Vector2(100000, 300)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=374057709]
 texture = SubResource("GradientTexture2D_bl6cx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1364892853]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_n1bf0")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=700939427]
+position = Vector2(-2500, 500)
+scale = Vector2(5000, 1500)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall" unique_id=1066489140]
+texture = SubResource("GradientTexture2D_bl6cx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1024922598]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_n1bf0")
 
 [node name="Square" parent="." unique_id=1084824665 instance=ExtResource("1_bl6cx")]
-position = Vector2(960, 896.02)
+position = Vector2(379, 897)
 _gravity = 2000.0
+_ropeSpeedIncrease = 0.5
+_fastStartingRopeSpeed = 6.5
+_fastRopeSpeedIncrease = 0.25
 
 [node name="PlayerCamera" parent="." unique_id=1381443440 node_paths=PackedStringArray("_playerNode") instance=ExtResource("3_i381x")]
 _playerNode = NodePath("../Square")
