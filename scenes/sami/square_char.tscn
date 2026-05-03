@@ -21,6 +21,7 @@ _ropeFront = NodePath("RopeFront")
 _ropeBack = NodePath("RopeBack")
 
 [node name="RopeBack" type="Sprite2D" parent="." unique_id=859232112]
+rotation = 4.2062435
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("2_ht326")
 offset = Vector2(6, -29)
@@ -32,6 +33,7 @@ texture = SubResource("GradientTexture2D_o1cqj")
 shape = SubResource("RectangleShape2D_nl68t")
 
 [node name="RopeFront" type="Sprite2D" parent="." unique_id=2071032943]
+rotation = 4.2062435
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("3_8c4bf")
 offset = Vector2(6, -29)

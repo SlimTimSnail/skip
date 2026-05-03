@@ -31,6 +31,11 @@ public partial class SquareChar : CharacterBody2D
 
 	private bool _hasLost = false;
 
+	public override void _Ready()
+	{
+		_rotationDegrees = _ropeFront.RotationDegrees;
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		if (_hasLost)
@@ -79,7 +84,6 @@ public partial class SquareChar : CharacterBody2D
 		if (inLoseZone && IsOnFloor())
 		{
 			PlayerLose?.Invoke();
-			//EmitSignal(SignalName.PlayerLose);
 			_hasLost = true;
 			return;
 		}
