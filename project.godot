@@ -110,3 +110,4 @@ action={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.07200112, 0.3332454, 0.41956165, 1)
