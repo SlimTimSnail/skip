@@ -23,6 +23,7 @@ alignment = 1
 [node name="CustomButton01" parent="VBoxContainer" unique_id=460092577 instance=ExtResource("1_mvtvq")]
 layout_mode = 2
 text = "Play"
+_isInitialFocus = true
 
 [node name="CustomButton02" parent="VBoxContainer" unique_id=1031077008 instance=ExtResource("1_mvtvq")]
 layout_mode = 2
