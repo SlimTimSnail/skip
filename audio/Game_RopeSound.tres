@@ -1,3 +1,13 @@
 [gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cugt6i8vmhmq7"]
 
+[ext_resource type="AudioStream" uid="uid://5tiv60f80pci" path="res://audio/audio_files/game/WHOOSH_Air_Fast_Bright_RR1_mono.wav" id="1_8lq7c"]
+[ext_resource type="AudioStream" uid="uid://bv8osu8ygquuu" path="res://audio/audio_files/game/WHOOSH_Air_Fast_Bright_RR2_mono.wav" id="2_obvah"]
+[ext_resource type="AudioStream" uid="uid://ceh8ypmn532p7" path="res://audio/audio_files/game/WHOOSH_Air_Fast_Bright_RR3_mono.wav" id="3_anp1g"]
+[ext_resource type="AudioStream" uid="uid://coeenjsawwvcd" path="res://audio/audio_files/game/WHOOSH_Air_Fast_Bright_RR4_mono.wav" id="4_uevie"]
+
 [resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_8lq7c")
+stream_1/stream = ExtResource("2_obvah")
+stream_2/stream = ExtResource("3_anp1g")
+stream_3/stream = ExtResource("4_uevie")

@@ -15,5 +15,5 @@ dest_files=["res://.godot/imported/SYNTHRAVE.mp3-a4f539f49a7828baeaf533c807796b6
 loop=true
 loop_offset=0.0
 bpm=120.0
-beat_count=366
+beat_count=365
 bar_beats=4

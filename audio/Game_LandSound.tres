@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://b284du3gk0k7t" path="res://audio/audio_files/game/8BIT_RETRO_Hit_Bump_Distorted_Thud_mono.wav" id="3_txuof"]
 
 [resource]
-random_pitch = 1.122462
 streams_count = 3
 stream_0/stream = ExtResource("1_lq4b0")
 stream_1/stream = ExtResource("2_ueh8y")

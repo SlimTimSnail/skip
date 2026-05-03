@@ -2,13 +2,10 @@
 
 [ext_resource type="AudioStream" uid="uid://dww562r8xew4c" path="res://audio/audio_files/game/8BIT_RETRO_Jump_Glide_Up_Bright_Quick_mono.wav" id="1_68i37"]
 [ext_resource type="AudioStream" uid="uid://dct24rlwf0yee" path="res://audio/audio_files/game/8BIT_RETRO_Jump_Glide_Up_Classic_Bright_mono.wav" id="2_axwf8"]
-[ext_resource type="AudioStream" uid="uid://bwqqog5evvf0s" path="res://audio/audio_files/game/8BIT_RETRO_Jump_Glide_Up_Classic_mono.wav" id="3_hiy43"]
 [ext_resource type="AudioStream" uid="uid://x8nskramcvpa" path="res://audio/audio_files/game/8BIT_RETRO_Jump_Glide_Up_Clean_mono.wav" id="4_n7i58"]
 
 [resource]
-random_pitch = 1.0594631
-streams_count = 4
+streams_count = 3
 stream_0/stream = ExtResource("1_68i37")
 stream_1/stream = ExtResource("2_axwf8")
-stream_2/stream = ExtResource("3_hiy43")
-stream_3/stream = ExtResource("4_n7i58")
+stream_2/stream = ExtResource("4_n7i58")
