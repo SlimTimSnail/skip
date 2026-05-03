@@ -89,4 +89,9 @@ public partial class SquareChar : CharacterBody2D
 		_ropeFront.RotationDegrees = _rotationDegrees;
 		_ropeBack.RotationDegrees = _rotationDegrees;
 	}
+
+	public void CheckpointOverlapped(bool isFinal)
+	{
+		
+	}
 }
