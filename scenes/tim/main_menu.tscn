@@ -78,7 +78,7 @@ offset_bottom = 498.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control/HowToPlayPanel" unique_id=1083141931]
+[node name="Label2" type="Label" parent="Control/HowToPlayPanel" unique_id=1083141931]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "This is you ------>
