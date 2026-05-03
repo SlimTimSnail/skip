@@ -20,6 +20,9 @@ public partial class AudioManager : Node
     [Export]
     private AudioStreamPlayer _musicGame;
 
+    [Export]
+    private SoundEffectPlayer _sfx;
+
     private AudioStreamPlayer _currentMusic;
 
 
@@ -62,5 +65,15 @@ public partial class AudioManager : Node
             default:
             break;
         }
+    }
+
+    public void PlaySfx(AudioStream sound)
+    {
+        if (_sfx.HasStreamPlayback())
+        {
+            _sfx.Stop();
+        }
+        _sfx.Stream = sound;
+        _sfx.PlaySoundEffect();
     }
 }

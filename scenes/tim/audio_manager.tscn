@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://cqex5exp5u131" path="res://scripts/tim/AudioManager.cs" id="1_id806"]
 [ext_resource type="AudioStream" uid="uid://cv2ct8sdb2cbx" path="res://audio/audio_files/music/SynthRaveMenu.mp3" id="2_rsxga"]
 [ext_resource type="AudioStream" uid="uid://dtys5fs36vs3a" path="res://audio/audio_files/music/SYNTHRAVE.mp3" id="3_twysj"]
+[ext_resource type="Script" uid="uid://oudw8xb48a0l" path="res://scripts/tim/SoundEffectPlayer.cs" id="4_twysj"]
 
-[node name="AudioManager" type="Node" unique_id=1079762041 node_paths=PackedStringArray("_musicMenu", "_musicGame")]
+[node name="AudioManager" type="Node" unique_id=1079762041 node_paths=PackedStringArray("_musicMenu", "_musicGame", "_sfx")]
 script = ExtResource("1_id806")
 _musicMenu = NodePath("MenuMusic")
 _musicGame = NodePath("GameMusic")
+_sfx = NodePath("Sfx")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=706610133]
 stream = ExtResource("2_rsxga")
@@ -15,3 +17,8 @@ stream = ExtResource("2_rsxga")
 [node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=847724717]
 stream = ExtResource("3_twysj")
 volume_db = -10.0
+
+[node name="Sfx" type="AudioStreamPlayer" parent="." unique_id=1872845711]
+volume_db = -12.0
+script = ExtResource("4_twysj")
+metadata/_custom_type_script = "uid://oudw8xb48a0l"

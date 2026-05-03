@@ -19,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_lpt1n")
 _replayButton = NodePath("ButtonPanel/VBoxContainer/CustomButton01")
 _leaveButton = NodePath("ButtonPanel/VBoxContainer/CustomButton02")
+_screenEnterSound = ExtResource("5_xrs64")
 
 [node name="BackgroundPanel" parent="." unique_id=796898552 instance=ExtResource("1_rctvg")]
 layout_mode = 1
@@ -52,11 +53,6 @@ text = "Play Again"
 
 [node name="CustomButton02" parent="ButtonPanel/VBoxContainer" parent_id_path=PackedInt32Array(1546858874, 1541257172) index="1" unique_id=1031077008]
 text = "Give Up"
-
-[node name="YEEEOOOOOOWWWWWHHHHH" type="AudioStreamPlayer" parent="." unique_id=1882731226]
-stream = ExtResource("5_xrs64")
-volume_db = -12.0
-autoplay = true
 
 [editable path="TitlePanel"]
 [editable path="ButtonPanel"]
