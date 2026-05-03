@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ch0rx6fpivlow" path="res://scenes/ui/background_panel.tscn" id="2_rqhrd"]
 [ext_resource type="PackedScene" uid="uid://ddrj6dmpxgs5v" path="res://scenes/ui/title_panel.tscn" id="3_nlep8"]
 [ext_resource type="PackedScene" uid="uid://b65jpdwtgst0c" path="res://scenes/ui/button_panel.tscn" id="4_rpctk"]
+[ext_resource type="PackedScene" uid="uid://3yc7nbxhi5h1" path="res://scenes/ui/custom_button.tscn" id="5_sgrj8"]
+[ext_resource type="Texture2D" uid="uid://cfss1br605lm0" path="res://Icon.png" id="6_r6npr"]
 
-[node name="MainMenu" type="Control" unique_id=1110968295 node_paths=PackedStringArray("_playButton", "_quitButton")]
+[node name="MainMenu" type="Control" unique_id=1110968295 node_paths=PackedStringArray("_playButton", "_howToPlayButton", "_quitButton", "_returnButton", "_howToPlayParent", "_menuParent")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +16,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nw432")
 _playButton = NodePath("ButtonPanel/VBoxContainer/CustomButton01")
+_howToPlayButton = NodePath("ButtonPanel/VBoxContainer/CustomButton03")
 _quitButton = NodePath("ButtonPanel/VBoxContainer/CustomButton02")
+_returnButton = NodePath("Control/CustomButton")
+_howToPlayParent = NodePath("Control")
+_menuParent = NodePath("ButtonPanel")
 
 [node name="BackgroundPanel" parent="." unique_id=796898552 instance=ExtResource("2_rqhrd")]
 layout_mode = 1
@@ -24,7 +30,85 @@ layout_mode = 1
 offset_top = 80.0
 offset_bottom = 180.0
 
+[node name="Label" parent="TitlePanel" index="0" unique_id=404828302]
+text = "Skip To The Checkpoint"
+
 [node name="ButtonPanel" parent="." unique_id=1546858874 instance=ExtResource("4_rpctk")]
 layout_mode = 1
+offset_bottom = 349.99988
 
+[node name="CustomButton03" parent="ButtonPanel/VBoxContainer" parent_id_path=PackedInt32Array(1546858874, 1541257172) index="1" unique_id=460092577 instance=ExtResource("5_sgrj8")]
+layout_mode = 2
+text = "How To Play"
+
+[node name="Control" type="Control" parent="." unique_id=647135838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1482163752]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 335.0
+offset_top = -131.0
+offset_right = 590.99963
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_r6npr")
+
+[node name="HowToPlayPanel" type="PanelContainer" parent="Control" unique_id=664788357]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -796.58997
+offset_top = -316.5
+offset_right = 38.0
+offset_bottom = 498.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/HowToPlayPanel" unique_id=1083141931]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "This is you ------>
+
+You are skipping rope
+
+Press SpaceBar to Jump
+
+You must Jump the rope
+
+The rope will get faster
+
+Move with ArrowKeys or A,D
+
+You must move to the right
+
+If you reach a checkpoint the rope speed will reset
+
+You must reach the final checkpoint"
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 2
+
+[node name="CustomButton" parent="Control" unique_id=723774853 instance=ExtResource("5_sgrj8")]
+layout_mode = 1
+offset_left = 317.0
+offset_top = 382.0
+offset_right = 617.0
+offset_bottom = 482.0
+text = "I understand"
+
+[editable path="TitlePanel"]
 [editable path="ButtonPanel"]
